@@ -74,7 +74,7 @@ class _MenuSatuState extends State<MenuSatu> {
             ),
             actions: <Widget>[
               IconButton(
-                icon: Icon(Icons.search),
+                icon: Icon(Icons.settings),
                 onPressed: () {
                   showSearch(context: context, delegate: DataSearch());
                 },

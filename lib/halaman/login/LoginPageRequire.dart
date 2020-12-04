@@ -10,8 +10,6 @@ class LoginPageR extends StatefulWidget {
 }
 
 class _LoginPageRState extends State<LoginPageR> {
-  TextEditingController usernameC =   TextEditingController();
-  TextEditingController passwordC =   TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,27 +22,25 @@ class _LoginPageRState extends State<LoginPageR> {
               Container(
                 margin: EdgeInsets.all(30.0),
                 padding: EdgeInsets.only(top:150.0,left: 30.0,right: 30.0),
-                child: Image.asset("images/logo_klikdoter.png"),
+                child: Image.asset("images/logo_appbar_klikdoter.png"),
               ),
-              Container(
-                padding: EdgeInsets.only(left: 10.0,right: 10.0),
-                child: Column(
-                  children: <Widget>[
-                    MaterialButton(
-                      child: Text("Daftar KlikDokter",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                      color: Colors.lightBlue[800],
-                      shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                      onPressed: () {Navigator.pushNamed(context, "login");},
-                    ),
-                    SizedBox(height: 5.0,),
-                    OutlineButton(
-                      child: Text("Masuk KlikDokter",style: TextStyle(color: Colors.lightBlue[800],fontWeight: FontWeight.bold)),
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                      onPressed: () {Navigator.pushNamed(context, "daftar");},
-                    ),
-                  ],
-                ),
+              Spacer(),
+              Column(
+                children: <Widget>[
+                  MaterialButton(
+                    child: Text("Daftar KlikDokter",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                    color: Colors.lightBlue[800],
+                    shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+                    onPressed: () {Navigator.pushNamed(context, "login");},
+                  ),
+                  Spacer(),
+                  OutlineButton(
+                    child: Text("Masuk KlikDokter",style: TextStyle(color: Colors.lightBlue[800],fontWeight: FontWeight.bold)),
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+                    onPressed: () {Navigator.pushNamed(context, "daftar");},
+                  ),
+                ],
               ),
               // Icon(FontAwesomeIcons.facebook,size: 50,),
 

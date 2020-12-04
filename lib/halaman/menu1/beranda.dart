@@ -50,19 +50,20 @@ class _HomePageState extends State<HomePage>  with SingleTickerProviderStateMixi
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text('Beranda'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.library_books),
-            title: Text('Artikel'),
+            label: 'Beranda',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat),
-            title: Text('Chat'),
+            label: 'Chat',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.library_books),
+            label: 'Artikel',
+          ),
+
+          BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            title: Text('Profil'),
+            label: 'Profil',
           ),
         ],
         type: BottomNavigationBarType.fixed,
