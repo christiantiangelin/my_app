@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-class SubSpesialis extends Card{
-
-}
 class Spesialis extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

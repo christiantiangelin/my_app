@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:well_app/halaman//DaftarPage.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class LoginPageR extends StatefulWidget {
   LoginPageR({Key key, this.title}) : super(key: key);
@@ -11,6 +10,9 @@ class LoginPageR extends StatefulWidget {
 }
 
 class _LoginPageRState extends State<LoginPageR> {
+  TextEditingController usernameC =   TextEditingController();
+  TextEditingController passwordC =   TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -32,19 +34,14 @@ class _LoginPageRState extends State<LoginPageR> {
                       child: Text("Daftar KlikDokter",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                       color: Colors.lightBlue[800],
                       shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => DaftarPage())
-                        );
-                      },
+                      onPressed: () {Navigator.pushNamed(context, "login");},
                     ),
                     SizedBox(height: 5.0,),
                     OutlineButton(
                       child: Text("Masuk KlikDokter",style: TextStyle(color: Colors.lightBlue[800],fontWeight: FontWeight.bold)),
                       color: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                      onPressed: () {},
+                      onPressed: () {Navigator.pushNamed(context, "daftar");},
                     ),
                   ],
                 ),

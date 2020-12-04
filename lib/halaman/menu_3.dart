@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:well_app/halaman/pesan.dart' as pesan;
-import 'package:well_app/halaman/dokter.dart' as dokter;
-import 'package:well_app/halaman/favorit.dart' as favorit;
+import 'file:///C:/Users/ASUS/AndroidStudioProjects/well_app/lib/halaman/menu3/infosehat.dart' ;
+import 'file:///C:/Users/ASUS/AndroidStudioProjects/well_app/lib/halaman/menu3/spesialis.dart' ;
 
-void main(){
-  runApp(
-      new MaterialApp(
-        title: "Chat",
-        home: new MenuTiga(),
-      )
-  );
-}
+//=================PROFILE===================
 class MenuTiga extends StatefulWidget {
   MenuTiga({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _MenuTigaState createState() => _MenuTigaState();
+  _MenuTigaState createState() => new _MenuTigaState();
 }
 
-class _MenuTigaState extends State<MenuTiga>  with SingleTickerProviderStateMixin {
+class _MenuTigaState extends State<MenuTiga> with SingleTickerProviderStateMixin{
   TabController _tabController;
 
   @override
   void initState(){
+    _tabController =new TabController(length: 2, vsync: this);
     super.initState();
-    _tabController = TabController(vsync:this, length: 3);
-    //tambahkan SingleTickerProviderStateMikin pada class _HomeState
   }
 
   @override
@@ -34,39 +25,40 @@ class _MenuTigaState extends State<MenuTiga>  with SingleTickerProviderStateMixi
     _tabController.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Chat"),
+    return new Scaffold(
+      appBar: new AppBar(
+        backgroundColor: Colors.green,
+        // leading:
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.search), onPressed: (){}),
+        ],
         bottom: _buildTabBar(),
       ),
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[
-          new pesan.Pesan(),
-          new dokter.Dokter(),
-          new favorit.Favorit(),
+          Infosehat(),
+          Spesialis(),
         ],
       ),
     );
   }
+
   TabBar _buildTabBar(){
     return TabBar(
       controller: _tabController,
       labelColor: Colors.white,
       tabs: <Widget>[
         Tab(
-          text : "PESAN",
+          text : "Info Sehat",
         ),
         Tab(
-          text : "DOKTER",
-        ),
-        Tab(
-          text : "FAVORIT",
+          text : "Spesialis",
         ),
       ],
     );
   }
 }
+

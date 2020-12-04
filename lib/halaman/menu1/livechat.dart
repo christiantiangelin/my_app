@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:well_app/halaman/chatReguler.dart';
+import 'file:///C:/Users/ASUS/AndroidStudioProjects/well_app/lib/halaman/menu2/chatReguler.dart';
 
 class LiveChat extends StatefulWidget {
   LiveChat({Key key, this.title}) : super(key: key);
