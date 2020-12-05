@@ -17,7 +17,7 @@ class MenuEmpat extends StatelessWidget{
                 icon: Icon(Icons.settings),
                 color: Colors.indigo,
                 onPressed: () {
-                  Navigator.pushNamed(context, "pengaturan");
+                  Navigator.pushNamed(context, "/pengaturan");
                 },
               ),
             ],

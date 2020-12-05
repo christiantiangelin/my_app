@@ -1,82 +1,77 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-class LoginPageR extends StatefulWidget {
-  LoginPageR({Key key, this.title}) : super(key: key);
-  final String title;
 
-  @override
-  _LoginPageRState createState() => new _LoginPageRState();
-}
-
-class _LoginPageRState extends State<LoginPageR> {
-
+class LoginRequire extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.all(30.0),
-                padding: EdgeInsets.only(top:150.0,left: 30.0,right: 30.0),
-                child: Image.asset("images/logo_appbar_klikdoter.png"),
-              ),
-              Spacer(),
-              Column(
-                children: <Widget>[
-                  MaterialButton(
-                    child: Text("Daftar KlikDokter",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                    color: Colors.lightBlue[800],
-                    shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                    onPressed: () {Navigator.pushNamed(context, "login");},
-                  ),
-                  Spacer(),
-                  OutlineButton(
-                    child: Text("Masuk KlikDokter",style: TextStyle(color: Colors.lightBlue[800],fontWeight: FontWeight.bold)),
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                    onPressed: () {Navigator.pushNamed(context, "daftar");},
-                  ),
-                ],
-              ),
-              // Icon(FontAwesomeIcons.facebook,size: 50,),
-
-              SizedBox(height: 15.0,),
-              Text("atau"),
-              SizedBox(height: 15.0,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  InputChip(
-                    backgroundColor: Colors.white,
-                    label: Text("Facebook",style: TextStyle(color: Colors.lightBlue[800],fontWeight: FontWeight.bold)),
-                    avatar: CircleAvatar(
-                      child: Image.asset("images/logo_appbar_klikdoter.png"),
-                    ),
-                    onPressed: (){},
-                  ),
-                  InputChip(
-                    backgroundColor: Colors.lightBlue[800],
-                    avatar: CircleAvatar(),
-                    label: Text("Google",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
-                    onPressed: () {},
-                  ),
-                ],
-              ),
-              Container(
-                child: RichText(text: TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(text: "Kesulitan mengakses akun KlikDokter?",style: TextStyle(fontWeight: FontWeight.bold )),
-                      TextSpan(text: "Laporkan Masalah Teknis"),
-                    ]
-                )),
+    return Scaffold(
+      body:Column(
+        children: [
+          Container(
+            margin: EdgeInsets.all(30.0),
+            padding: EdgeInsets.only(top:150.0,left: 30.0,right: 30.0),
+            child: Image.asset("images/logo_klikdoter.png"),
+          ),
+          GestureDetector(
+            onTap: (){Navigator.pushReplacementNamed(context, "/home");},
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 15,horizontal: 100),
+              child: Text("Daftar KlikDokter",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+              decoration: BoxDecoration(
+                color: Colors.indigoAccent[400],
+                borderRadius: BorderRadius.circular(30),
               )
+            ),
+          ),
+          SizedBox(height: 10.0,),
+          GestureDetector(
+            onTap: (){Navigator.pushReplacementNamed(context, "/home");},
+            child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.0),
+                padding: EdgeInsets.symmetric(vertical: 15,horizontal: 100),
+                child: Text("Masuk KlikDokter",style: TextStyle(color: Colors.indigoAccent,fontWeight: FontWeight.bold),),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(width: 1,color: Colors.indigoAccent),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 1,
+                      color: Colors.grey
+                    )
+                  ]
+                )
+            ),
+          ),
+          SizedBox(height: 10.0,),
+          Center(child: Text("atau")),
+          SizedBox(height: 15.0,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              InputChip(
+                labelPadding: EdgeInsets.symmetric(horizontal: 20.0),
+                backgroundColor: Colors.indigo[700],
+                label: Text("Facebook",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+                avatar: CircleAvatar(
+                  backgroundColor: Colors.white,
+                    child: Image.asset("images/fb.jpg"),
+                ),
+                onPressed: (){},
+              ),
+              InputChip(
+                avatar: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Image.asset("images/google.png"),
+                ),
+                backgroundColor: Colors.indigoAccent[400],
+                label: Text("Google",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                onPressed: () {},
+              ),
             ],
           ),
-        ),
+        ],
       ),
     );
   }

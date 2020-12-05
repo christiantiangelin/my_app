@@ -6,15 +6,19 @@ class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          TextField(
-            controller: usernameC,
-          ),
-          TextField(
-            controller: passwordC,
-          )
-        ],
+      body: Center(
+        child: Column(
+          children: [
+            // TextField(
+            //   controller: usernameC,
+            // ),
+            // TextField(
+            //   controller: passwordC,
+            // ),
+            SizedBox(height: 50,),
+            FlatButton(onPressed: (){Navigator.pushReplacementNamed(context, "/home");}, child: Text("Sign In"),color: Colors.indigoAccent,)
+          ],
+        ),
       ),
     );
   }

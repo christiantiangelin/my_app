@@ -53,42 +53,14 @@ class _MenuSatuState extends State<MenuSatu> {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.lightBlue[800],
-            title: Padding(
-                padding: EdgeInsets.only(left: 10.0),
-                child: RichText(
-                  text: TextSpan(children: [
-                    TextSpan(
-                        text: "klik",
-                        style: TextStyle(
-                          color: Colors.lightGreen[600],
-                          fontSize: 26.0,
-                        )),
-                    TextSpan(
-                        text: "dokter",
-                        style: TextStyle(color: Colors.white, fontSize: 28.0)),
-                  ]),
-                ),
-            ),
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.settings),
-                onPressed: () {
-                  showSearch(context: context, delegate: DataSearch());
-                },
-              ),
-            ],
-          ),
           body: new Column(
             children: <Widget>[
               Container(
-                height: size.height * 0.15,
+                height: size.height * 0.18,
                 child: Stack(
                   children: <Widget>[
                     Container(
-                      height: size.height * 0.15 - 27,
+                      height: size.height * 0.18 - 27,
                       decoration: BoxDecoration(
                           color: Colors.lightBlue[800],
                           borderRadius: BorderRadius.only(
@@ -97,18 +69,46 @@ class _MenuSatuState extends State<MenuSatu> {
                           )),
                       child: Row(
                         children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.only(left: 20.0),
-                            child: Text(
-                              " Selamat Datang",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline5
-                                  .copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
+                          Padding(
+                            padding: EdgeInsets.only(left: 20.0,bottom: 40.0,top: 20.0),
+                            child: RichText(
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: "klik",
+                                    style: TextStyle(
+                                      color: Colors.lightGreen[600],
+                                      fontSize: 26.0,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                                TextSpan(
+                                    text: "dokter",
+                                    style: TextStyle(color: Colors.white, fontSize: 28.0,fontWeight: FontWeight.bold,)),
+                              ]),
                             ),
-                          )
+                          ),
+                          Spacer(),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10.0,bottom: 40.0,top: 20.0),
+                            child: IconButton(
+                              icon: Icon(Icons.settings),
+                              onPressed: () {
+                                showSearch(context: context, delegate: DataSearch());
+                              },
+                              color: Colors.white,
+                            ),
+                          ),
+                          // Container(
+                          //   padding: EdgeInsets.only(left: 20.0),
+                          //   child: Text(
+                          //     " Selamat Datang",
+                          //     style: Theme.of(context)
+                          //         .textTheme
+                          //         .headline5
+                          //         .copyWith(
+                          //             color: Colors.white,
+                          //             fontWeight: FontWeight.bold),
+                          //   ),
+                          // )
                         ],
                       ),
                     ),
@@ -164,7 +164,7 @@ class _MenuSatuState extends State<MenuSatu> {
                     MenuCard(size: size,namaMenu: "Konsultasi",image: "images/chat_with_doctor.jpg",page: "pesan",),
                     MenuCard(size: size,namaMenu: "Buat janji",image: "images/buat_janji.png",page: "buat janji",),
                     MenuCard(size: size,namaMenu: "Artikel Kesehatan",image: "images/login_illustration.jpg",),
-                    MenuCard(size: size,namaMenu: "Belanja Sehat",image: "images/doctors_talking.png",),
+                    // MenuCard(size: size,namaMenu: "Belanja Sehat",image: "images/doctors_talking.png",),
                     //============================ _menuItem ==========================
                     // _menuItem(Icons.library_books, "Info Sehat", "dokter"),
                     // _menuItem(Icons.home, "Klinik", "dokter"),
